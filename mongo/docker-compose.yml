@@ -1,0 +1,17 @@
+version: '3'
+services:
+  mongodb:
+    image: <your_username_dockerhub>/mongo:3.4
+    container_name: "mongodb"
+    environment:
+      MONGODB_ADMIN_USER: "admin"
+      MONGODB_ADMIN_PASS: "adminpass"
+      MONGODB_APPLICATION_USER: "user"
+      MONGODB_APPLICATION_DATABASE: "userdb"
+      MONGODB_APPLICATION_PASS: "userpass"
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodata:/data/db
+volumes:
+  mongodata:
