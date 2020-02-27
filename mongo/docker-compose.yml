@@ -1,17 +1,19 @@
-version: '3'
+version: '3.7'
 services:
   mongodb:
-    image: <your_username_dockerhub>/mongo:3.4
-    container_name: "mongodb"
+    image: mongo:latest
+    container_name: mongo-nuclearis
+    restart: unless-stopped
+    command: mongod --auth
     environment:
-      MONGODB_ADMIN_USER: "admin"
-      MONGODB_ADMIN_PASS: "adminpass"
-      MONGODB_APPLICATION_USER: "user"
-      MONGODB_APPLICATION_DATABASE: "userdb"
-      MONGODB_APPLICATION_PASS: "userpass"
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: radtec.2015
+      MONGO_INITDB_DATABASE: nuclearis
     ports:
-      - "27017:27017"
+      - 27017:27017
     volumes:
-      - mongodata:/data/db
+      - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+      - nuclearis-volume:/data/db
+
 volumes:
-  mongodata:
+  nuclearis-volume:
