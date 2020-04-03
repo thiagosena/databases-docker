@@ -1,11 +1,11 @@
 db.createUser(
     {
-        user: "user_nuclearis",
-        pwd: "radtec.2015",
+        user: "teste",
+        pwd: "teste",
         roles: [
             {
                 role: "readWrite",
-                db: "nuclearis"
+                db: "teste"
             }
         ]
     }
