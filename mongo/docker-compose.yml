@@ -7,8 +7,8 @@ services:
     command: mongod --auth
     environment:
       MONGO_INITDB_ROOT_USERNAME: admin
-      MONGO_INITDB_ROOT_PASSWORD: radtec.2015
-      MONGO_INITDB_DATABASE: nuclearis
+      MONGO_INITDB_ROOT_PASSWORD: admin
+      MONGO_INITDB_DATABASE: db_teste
     ports:
       - 27017:27017
     volumes:
