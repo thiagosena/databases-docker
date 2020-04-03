@@ -1,7 +1,7 @@
 version: '3.7'
 services:
   mongodb:
-    image: mongo:latest
+    image: mongo:3.6
     container_name: mongo-nuclearis
     restart: unless-stopped
     command: mongod --auth
